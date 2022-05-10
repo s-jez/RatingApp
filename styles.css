@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Overpass', sans-serif;
-    background: hsl(216, 12%, 8%);
+    background: hsl(217, 9%, 17%);
 }
 h1 {
     color: #fff;
@@ -31,6 +31,7 @@ p {
     padding: 10px;
     background-color: hsl(213, 19%, 18%);
     border-radius: 20px;
+    box-shadow: 5px 5px 15px 5px hsl(210, 11%, 11%);
 }
 .card__thanks {
     display: flex;
@@ -38,6 +39,7 @@ p {
     align-items: center;
     background-color: hsl(213, 19%, 18%);
     border-radius: 15px;
+    box-shadow: 5px 5px 15px 5px hsl(210, 11%, 11%);
 }
 .card__image {
     margin: auto;
@@ -64,11 +66,12 @@ p {
     margin: 15px;
     font-size: 18px;
     color: #fff;
-    background: hsl(216, 12%, 54%);
+    background: hsl(212, 7%, 40%);
+    box-shadow: 5px 5px 15px 5px hsl(197, 9%, 15%);
     border-radius: 100px;
     border: 0;
 }
-.btn__rating:hover {
+.btn__rating:hover, .btn__rating:focus{
     cursor: pointer;
     background-color: hsl(25, 97%, 53%);
     transition: .5s ease-out;
@@ -77,11 +80,13 @@ p {
     margin: auto;
     width: 90%;
     font-size: 16px;
+    font-weight: 700;
     background: hsl(25, 97%, 53%);
     color: #fff;
     height: 45px;
     border-radius: 20px;
     border: 0;
+    box-shadow: 5px 5px 15px 5px hsl(197, 9%, 15%);
 }
 .btn__submit:hover {
     cursor: pointer;
@@ -89,11 +94,29 @@ p {
     color: hsl(25, 97%, 53%);
     transition: .5s ease-in;
 }
+.attribution {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin: 20px;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
 @media screen and (max-width: 768px) {
     .card__rating {
         width: 90%;
     }
     .btn__rating {
         margin: 5px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .btn__rating {
+        margin: 3px;
+    }
+    .buttons__rating  {
+        margin: 5px;
+        padding: 5px;
     }
 }

@@ -4,19 +4,21 @@ const modal = document.querySelector(".modal");
 let ratingValue;
 
 btnsRating.forEach((btn) => {
-  btn.addEventListener("click", (ev) => {
-    btn.style.background = "hsl(25, 97%, 53%)";
-    ratingValue = ev.target.innerText;
+  btn.addEventListener("click", (event) => {
+    ratingValue = event.target.innerText;
+    modal.style.display = "none";
   });
 });
 
-const submitFn = () => {
-  alert(`Your submitted form, with ${ratingValue} stars.`);
-  modal.style.display = "block";
-  isClicked = true;
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 5000);
+const submitForm = () => {
+  localStorage.setItem("rating", ratingValue);
+  if (localStorage.getItem("rating") != 0) {
+    modal.style.display = "block";
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 5000);
+  }
+  ratingValue = 0;
 };
 
-btnSubmit.addEventListener("click", submitFn);
+btnSubmit.addEventListener("click", submitForm);
